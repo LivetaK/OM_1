@@ -5,7 +5,7 @@
 
 double ySk(double x) {
 	double y;
-	y = pow((pow(x, 2) - 8), 2) / 8;
+	y = pow((x * x - 8), 2) / 7;
 	return y;
 }
 
@@ -32,7 +32,6 @@ void intervaloDalijimasPusiau(double &xm, double &x1, double &x2, double &r, dou
 	x1 = (xm + l) / 2;
 	x2 = (r + xm) / 2;
 	
-	cout << l << " " << x1 << " " << xm << " " << x2 << " " << r << endl;
 
 	L = r - l;
 
