@@ -1,14 +1,21 @@
 #include "Header.h"
 
+
 // a = 8;
 // b = 0   --     2+3+1+3+9+8 = 26   --   2+6 = 8; 
 
 double ySk(double x) {
 	double y;
-	y = pow((x * x - 8), 2) / 7;
-	return y;
+	return pow((x * x - 8), 2) / 7;
 }
 
+double dxFun(double x) {
+	return 4 / 7 * x * x * x - 32 / 7 * x;
+}
+
+double dxxFun(double x) {
+	return 12 / 7 * x * x - 32 / 7;
+}
 
 void intervaloDalijimasPusiau(double &xm, double &x1, double &x2, double &r, double &l, double &L, double &ym) {
 
@@ -59,5 +66,24 @@ void auksinisPjuvis(double &L, double& x1, double& x2, double& y1, double& y2, d
 	}
  }
 
+
+double niutonoMetodas(int& iteracijos, int& funkcijosKvietimas) {
+	double xi = 5;
+	double xj = 5;
+	double dx = 0;
+	double dxx = 0;
+	do {
+		xi = xj;
+		dx = dxFun(xi);
+		dxx = dxxFun(xi);
+		xj = xi - dx / dxx;
+		iteracijos += 1;
+		funkcijosKvietimas += 2;
+		cout << "xj: " << xj << endl;
+		cout << dx << endl;
+		cout << dxx << endl;
+	} while (abs(xj - xi) > 0.0001);
+	return xj;
+}
 
 

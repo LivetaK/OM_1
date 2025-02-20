@@ -87,7 +87,17 @@ int main() {
 
 	// NIUTONO METODAS 
 
+	iteracijos = 0;
+	int funkcijosKvietimas = 0;
+	Xmin = niutonoMetodas(iteracijos, funkcijosKvietimas);
+	Ymin = ySk(Xmin);
 
+	cout << "NIUTONO METODAS" << endl;
+	cout << endl;
+	cout << "Minimumo taskas:\n" << "( " << Xmin << " ; " << Ymin << " )" << endl;
+	cout << "Funkcija buvo kviesta: " << funkcijosKvietimas << endl;
+	cout << "Iteraciju skaicius:" << iteracijos << endl;
+	cout << endl;
 
 
 
