@@ -32,6 +32,8 @@ void intervaloDalijimasPusiau(double &xm, double &x1, double &x2, double &r, dou
 	x1 = (xm + l) / 2;
 	x2 = (r + xm) / 2;
 	
+	cout << l << " " << x1 << " " << xm << " " << x2 << " " << r << endl;
+
 	L = r - l;
 
 }
@@ -42,19 +44,20 @@ void intervaloDalijimasPusiau(double &xm, double &x1, double &x2, double &r, dou
 void auksinisPjuvis(double &L, double& x1, double& x2, double& y1, double& y2, double &l, double &r, const double ap) {
 	if (y2 < y1) {
 		l = x1;
+		L = r - l;
 		x1 = x2;
 		x2 = l + ap * L;
 		y1 = y2;
 		y2 = ySk(x2);
 	}
 	else {
-		r = x1;
+		r = x2;
+		L = r - l;
 		x2 = x1;
-		x1 = r + ap * L;
+		x1 = r - ap * L;
 		y2 = y1;
 		y1 = ySk(x1);
 	}
-	L = r - l;
  }
 
 
