@@ -38,10 +38,7 @@ void intervaloDalijimasPusiau(double &xm, double &x1, double &x2, double &r, dou
 	}
 	x1 = (xm + l) / 2;
 	x2 = (r + xm) / 2;
-	
-
 	L = r - l;
-
 }
 
 
@@ -79,11 +76,9 @@ double niutonoMetodas(int& iteracijos, int& funkcijosKvietimas) {
 			break;
 		}
 		xj = xi - dx / dxx;
-		iteracijos += 1;
+		iteracijos++;
 		funkcijosKvietimas += 2;
-		cout << "xj: " << xj << endl;
-		cout << dx << endl;
-		cout << dxx << endl;
+
 	}
 	return xj;
 
